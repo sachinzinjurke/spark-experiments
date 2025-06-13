@@ -1,0 +1,31 @@
+# MacOS
+.DS_Store
+
+# Notebooks
+.ipynb_checkpoints
+
+# IDE
+.idea
+
+# VSCode
+.vscode
+
+# Files/Directories
+interview
+spark/to_include_later
+
+# Datasets
+data/*
+datasets/raw_customers.csv
+datasets/raw_transactions.csv
+datasets/bucketing/partitioned
+datasets/partitioning/partitioned
+!datasets/data_skew
+!datasets/partitioning
+!datasets/spark-experiments.gif
+!datasets/spark-execution.png
+!datasets/bucketing
+spark/metastore_db
+spark/spark-warehouse
+spark/derby.log
+spark/test

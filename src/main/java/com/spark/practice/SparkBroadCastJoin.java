@@ -17,6 +17,9 @@ public class SparkBroadCastJoin {
                 .getOrCreate();
 
         spark.conf().set("spark.sql.autoBroadcastJoinThreshold", 10485760);
+
+       // spark.conf().set("spark.sql.autoBroadcastJoinThreshold", -1);
+
         Dataset<Row> transactions = spark.read()
                 .parquet("C:\\interview-workspace\\spark-experiments\\src\\main\\resources\\datasets\\transactions.parquet");
 

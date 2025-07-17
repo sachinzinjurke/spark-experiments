@@ -1,0 +1,7 @@
+product_id,product_name,category,brand,price,stock
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+1,Product_1,Electronics,Brand_4,26,505
+2,Product_2,Apparel,Brand_4,489,15
+3,Product_3,Apparel,Brand_4,102,370
+4,Product_4,Groceries,Brand_1,47,433

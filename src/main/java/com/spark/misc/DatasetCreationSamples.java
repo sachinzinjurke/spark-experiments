@@ -1,4 +1,4 @@
-package com.spark.malformed;
+package com.spark.misc;
 
 import com.spark.model.Person;
 import org.apache.log4j.Level;

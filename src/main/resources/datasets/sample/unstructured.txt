@@ -1,0 +1,43 @@
+SACHIN ZINJURKE
++91 9527586565 | Wagholi, Pune - 412207 | sachinzinjurke@gmail.com
+PROFESSIONAL SUMMARY
+Experienced Senior Software Developer with 16 years of hands-on experience in
+software design and development across Java, Big Data, and cloud-based technologies.
+Proven expertise in Apache Storm, Spark, Kafka, Azure Databricks, and SpringBoot
+microservices. Strong analytical and problem-solving skills with a track record of leading
+end-to-end project implementations and cloud migrations. Award-winning contributor
+with a passion for innovation and performance optimization.
+TECHNICAL SKILLS
+- Languages: Core Java, Shell Scripting, Java 8, Multithreading, Data Structures &
+Algorithms
+- Frameworks: Spring Core, Spring Security, Spring Data, Java Executors
+- Big Data & Streaming: Apache Storm, Apache Spark, Apache Kafka, Apache Flink,
+Hazelcast
+- Databases: MongoDB, Cassandra, DB2, MySQL,Oracle
+- Web: Web Services, AngularJS, JavaScript
+- Build & Tools: Maven, Jenkins, Git, SVN, PMD, Sonar, JProfiler, VisualVM, JConsole
+- Cloud & DevOps: Microsoft Azure (EventHub, Databricks, App Services, SQL, Log
+Analytics)
+- Other: JSON, XML, Protocol Buffers, Flat Files, Eclipse, STS, TIBCO Queue, ELK
+Stack (ElasticSearch, Logstash, Kibana)SACHIN ZINJURKE
++91 9527586565 | Wagholi, Pune - 412207 | sachinzinjurke@gmail.com
+PROFESSIONAL SUMMARY
+Experienced Senior Software Developer with 16 years of hands-on experience in
+software design and development across Java, Big Data, and cloud-based technologies.
+Proven expertise in Apache Storm, Spark, Kafka, Azure Databricks, and SpringBoot
+microservices. Strong analytical and problem-solving skills with a track record of leading
+end-to-end project implementations and cloud migrations. Award-winning contributor
+with a passion for innovation and performance optimization.
+TECHNICAL SKILLS
+- Languages: Core Java, Shell Scripting, Java 8, Multithreading, Data Structures &
+Algorithms
+- Frameworks: Spring Core, Spring Security, Spring Data, Java Executors
+- Big Data & Streaming: Apache Storm, Apache Spark, Apache Kafka, Apache Flink,
+Hazelcast
+- Databases: MongoDB, Cassandra, DB2, MySQL,Oracle
+- Web: Web Services, AngularJS, JavaScript
+- Build & Tools: Maven, Jenkins, Git, SVN, PMD, Sonar, JProfiler, VisualVM, JConsole
+- Cloud & DevOps: Microsoft Azure (EventHub, Databricks, App Services, SQL, Log
+Analytics)
+- Other: JSON, XML, Protocol Buffers, Flat Files, Eclipse, STS, TIBCO Queue, ELK
+Stack (ElasticSearch, Logstash, Kibana)

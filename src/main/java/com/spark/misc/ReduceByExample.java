@@ -1,17 +1,14 @@
-package com.spark.malformed;
+package com.spark.misc;
 
 import com.spark.model.Person;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.function.Function2;
-import org.apache.spark.rdd.RDD;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ReduceByExample {

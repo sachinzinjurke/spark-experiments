@@ -6,20 +6,18 @@ import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
-import static org.apache.spark.sql.functions.col;
-import static org.apache.spark.sql.functions.split;
+import static org.apache.spark.sql.functions.*;
 
-public class QueryPlanForJoin {
+public class ExplicitBroadCastJoinExample {
 
     public static void main(String[] args) {
-
         Logger.getLogger("org.apache").setLevel(Level.WARN);
         SparkSession spark = SparkSession.builder()
                 .appName("Query Plans For Join")
                 .master("local[*]")
                 .getOrCreate();
-        //This property will prevent auto broadcast join happening and will force for Sort Merge join by shuffeling data
-        spark.conf().set("spark.sql.autoBroadcastJoinThreshold", -1);
+
+        spark.conf().set("spark.sql.autoBroadcastJoinThreshold", 10485760);
 
         Dataset<Row> transactions = spark.read()
                 .parquet("C:\\interview-workspace\\spark-experiments\\src\\main\\resources\\datasets\\transactions.parquet");
@@ -33,12 +31,10 @@ public class QueryPlanForJoin {
                 .withColumn("last_name",col("split").getItem(1))
                 .drop(col("split"));
 
-       /* transactions.show(5);
-        customers.show(5);*/
+        Dataset<Row> broadCastJoin = transactions.
+                join(broadcast(customers), transactions.col("cust_id").equalTo(customers.col("cust_id")),"inner");
 
-        Dataset<Row> join = transactions
-                .join(customers, transactions.col("cust_id").equalTo(customers.col("cust_id")), "inner");
-        join.show(2);
+        broadCastJoin.write().mode("overwrite").format("noop").save("C:\\interview-workspace\\spark-experiments\\src\\main\\resources\\output");
 
         try {
             Thread.sleep(5000000);

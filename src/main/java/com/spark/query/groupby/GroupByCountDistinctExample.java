@@ -5,9 +5,10 @@ import org.apache.log4j.Logger;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
+
 import static org.apache.spark.sql.functions.*;
 
-public class GroupByExample {
+public class GroupByCountDistinctExample {
 
     public static void main(String[] args) throws InterruptedException {
         Logger.getLogger("org.apache").setLevel(Level.WARN);
@@ -16,15 +17,18 @@ public class GroupByExample {
                 .master("local[*]")
                 .getOrCreate();
 
-        Dataset<Row> customers = spark.read()
-                .parquet("C:\\interview-workspace\\spark-experiments\\src\\main\\resources\\datasets\\customers.parquet");
+        Dataset<Row> transactions = spark.read()
+                .parquet("C:\\interview-workspace\\spark-experiments\\src\\main\\resources\\datasets\\transactions.parquet");
 
-        Dataset<Row> groupedCustDF = customers
-                .groupBy(col("city"))
-                .count();
+        transactions.show(5);
 
-        //groupedCustDF.printSchema();
-        //groupedCustDF.show();
+
+        Dataset<Row> grpCustCountDistinctCity = transactions
+                .groupBy(col("cust_id"))
+                .agg(countDistinct("city"));
+
+        grpCustCountDistinctCity.printSchema();
+        grpCustCountDistinctCity.show();
         Thread.sleep(1000000);
     }
 }

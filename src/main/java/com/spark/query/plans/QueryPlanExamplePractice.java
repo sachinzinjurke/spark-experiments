@@ -5,8 +5,10 @@ import org.apache.log4j.Logger;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
+
 import static org.apache.spark.sql.functions.*;
-public class QueryPlanExample {
+
+public class QueryPlanExamplePractice {
 
     public static void main(String[] args) {
 
@@ -25,23 +27,21 @@ public class QueryPlanExample {
         Dataset<Row> customers = spark.read()
                 .parquet("C:\\interview-workspace\\spark-experiments\\src\\main\\resources\\datasets\\customers.parquet");
 
-        // Narrow transformation query plan
-        customers= customers
-                        .filter(col("city").equalTo("boston"))
-                        .withColumn("split",split(col("name")," "))
-                        .withColumn("first_name",col("split").getItem(0))
-                        .withColumn("last_name",col("split").getItem(1))
-                        .withColumn("age",col("age").$plus(lit(100)));
-                       // .drop(col("split"));
+        customers= customers.filter(col("city").equalTo("boston")) ;
+        Dataset<Row> finalDF =
+                customers.filter(col("city").equalTo("boston"))
+                .withColumn("split", split(col("name"), " "))
+                .withColumn("first_name", col("split").getItem(0))
+                .withColumn("last_name", col("split").getItem(1))
+                .drop("split")
+                .select("first_name","last_name","gender","city") ;
 
-
-
-        customers.show(5);
-        customers.explain(true);
-
-       System.out.println(transactions.rdd().getNumPartitions());
-
-       transactions.repartition(24).explain(true);
+        System.out.println(" Total Partitions :: " + finalDF.toJavaRDD().getNumPartitions());
+        Dataset<Row> repartition = finalDF.repartition(12);
+        System.out.println(" Total Partitions After Repartition :: " + repartition.toJavaRDD().getNumPartitions());
+        //repartition.show(5);
+        repartition.explain(true);
+        repartition.count();
 
         try {
             Thread.sleep(5000000);
